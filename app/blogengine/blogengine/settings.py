@@ -57,7 +57,10 @@ ROOT_URLCONF = 'blogengine.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            #подключение шаблонов из папкм blogengine --> templates --> все файлы
+            os.path.join(BASE_DIR, 'templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

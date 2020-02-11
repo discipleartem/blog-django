@@ -77,6 +77,16 @@ urlpatterns = [
 ####################### / blog --> файл urls.py #######################
 
 
-########### lesson 3 ###########
+########### lesson 3 templates ###########
 
-https://youtu.be/Y-8wCNh3fOs
+Подключение шаблонов в blogengine --> settings.py в ``` 'DIRS': [],``` 
+
+```
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+```
+
+########### lesson 4 model ###########
+https://youtu.be/4O1xdboP0PY
