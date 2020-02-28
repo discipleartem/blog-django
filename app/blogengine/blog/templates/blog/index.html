@@ -5,12 +5,24 @@
 {% endblock %}
 
 {% block content %}
+
     <!-- ['Oleg', 'Masha', 'Olya', 'Ksuha'] -->
     <h1 class="mb-5">Posts:</h1>
-    {% for name in names %}
-        <p>
-            {{ name }}
-        </p>
+    {% for post in posts %}
+        <div class="card mb-4">
+          <h5 class="card-header">
+              {{ post.date_pub }}
+          </h5>
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.body|truncatewords:15 }}</p>
+            <!-- c помощью Переопределения функции get_absolute_url в models.py
+            можно упростить маршрутизацию Путей  -->
+            <!-- <a href="{% url 'post_detail_url' slug=post.slug %}" class="btn btn-light">Read</a> -->
+            <a href="{{ post.get_absolute_url }}" class="btn btn-light">Read</a>
+          </div>
+        </div>
+
     {%  endfor %} 
 {% endblock %}
 

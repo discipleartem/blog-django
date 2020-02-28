@@ -89,4 +89,43 @@ TEMPLATES = [
 ```
 
 ########### lesson 4 model ###########
-https://youtu.be/4O1xdboP0PY
+после заполнения model.py в виртуальном окружении выполняем миграции
+
+в папке c файлом ```manage.py```
+```./manage.py makemigrations```
+схема миграции в папке migrations
+
+а после применяем миграцию
+```./manage.py migrate```
+
+переход в консоль django 
+```./manage.py shell```
+
+```
+from blog.models import Post
+p1 = Post(title = 'New Post', slug = 'new-slug', body = 'new post body')
+p.save()
+p.id
+dir(p)
+
+p2 = Post.objects.create(title = 'new post2', slug = 'new-post2', body = 'body')
+Post.objects.all()
+post = Post.objects.get(slug = 'new-slug')
+
+# регистро-независемый поиск 
+post = Post.objects.get(slug__iexact = 'New-slug')
+
+p3 = Post.objects.create(title = 'new post3', slug = 'new-post3', body = 'body of post 3')
+
+p4 = Post.objects.create(title = 'new post4', slug = 'new-post-4', body = 'body of post 4')
+
+p5 = Post.objects.create(title = 'new post5', slug = 'new-post-5', body = 'my 5th post')
+
+```
+########### lesson 5 model Tag ###########
+
+
+
+
+
+https://youtu.be/C_K12QRDE8k
